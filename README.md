@@ -9,6 +9,7 @@ Download the Sampi using the green Code button on
 GitHub and select Download ZIP. Extract the downloaded folder.
 
 Running Sampi
+To run Sampi, you will need Python3.
 Open a terminal in the project folder and run:
 
 python3 IDE.py
