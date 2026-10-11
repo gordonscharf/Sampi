@@ -2,7 +2,7 @@ from . import errors
 from .lexer import lex
 from .parser import Parser
 from .compiler import Compiler
-from .ast_nodes import Word, Number, Array, Dict, Index
+from .ast_nodes import String, Number, Array, Dict, Index
 from pathlib import Path
 import operator
 import random
@@ -12,8 +12,8 @@ def add(a, b):
     ta = type(a)
     tb = type(b)
 
-    if ta in (Word, Number) and tb in (Word, Number):
-        if ta is Word or tb is Word:
+    if ta in (String, Number) and tb in (String, Number):
+        if ta is String or tb is String:
             return f"{a}{b}"
     return a + b
 
@@ -68,7 +68,7 @@ UNARY_OPS = {
     }
 
 def ask(prompt=""):
-    return Word(input(prompt))
+    return String(input(prompt))
 
 def random_(a, b):
     return Number(random.randint(a, b))
@@ -89,7 +89,7 @@ def run_vm(byte_code, starting_vars=None, starting_glues=None, type_="START"):
             "random": random_,
             "len": len,
             
-            "string": Word,
+            "string": String,
             "number": Number
              } | (starting_vars or {})
 
@@ -188,8 +188,8 @@ def run_vm(byte_code, starting_vars=None, starting_glues=None, type_="START"):
                     ip = byte[1]
                     continue
 
-                case "START_LOOP":
-                    vars_[byte[1]] = 1
+                case "INIT_LOOP":
+                    vars_[byte[1]] = 0
                 # TODO fix loops
                 case "LOOP_NEXT":
                     var = byte[1]
