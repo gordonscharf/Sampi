@@ -4,7 +4,7 @@ Sampi is an obsolete Greek letter and symbol for 900.
 Sampi is now also high level programming language.
 The symbol for sampi is ϡ.
 
-**Installing Sampi**
+# **Installing Sampi**
 
 Download the Sampi using the green Code button on 
 GitHub and select Download ZIP. Extract the downloaded folder.
@@ -21,7 +21,7 @@ Once the IDE opens, you can begin experimenting with Sampi.
 **Printing**
 
 To bring a value, type:
-```text
+```code
 say("Hello, world!")
 ```
 
