@@ -37,12 +37,12 @@ set x to x + 1
 ```
 ## **Operators**
 
-Add 1 + 1 = 2
-Subtract 1 - 1 = 0
-Multiply 2 * 4 = 8
-Divide 8 / 2 = 4
-Exponents 4^2 = 16
-And negation ~1 = -1
+| Operation | Example | Result |
+|---|---|---|
+| Addition | `1 + 1` | `2` |
+| Subtraction | `3 - 1` | `2` |
+| Multiplication | `2 * 4` | `8` |
+| Division | `8 / 2` | `4` |
 
 A string plus a number combines them
 
