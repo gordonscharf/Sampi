@@ -189,13 +189,23 @@ def run_vm(byte_code, starting_vars=None, starting_glues=None, type_="START"):
                     continue
 
                 case "INIT_LOOP":
-                    vars_[byte[1]] = 0
+                    loop = byte[1]
+                    vars_[f"!{loop}"] = 0
+                    vars_[f"${loop}"] = stack.pop()
                 # TODO fix loops
                 case "LOOP_NEXT":
-                    var = byte[1]
-                    if vars_[var] < stack.pop():
-                        vars_[var] += 1
-                        ip = byte[2]
+                    loop = byte[2]
+                    loop_var = f"!{loop}"
+                    
+                    current_loop = vars_[loop_var]
+                    if current_loop < vars_[f"${loop}"]:
+                        next_loop = current_loop + 1
+                        vars_[loop_var] = next_loop
+                    
+                        if var := byte[3]:
+                            vars_[var] = next_loop
+                    else:
+                        ip = byte[1]
                         continue
 
                 case "START_FUNC":
