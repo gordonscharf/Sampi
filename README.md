@@ -1,4 +1,4 @@
-How to code in Sampi ϡ
+**How to code in Sampi**
 
 Sampi is an obsolete Greek letter and symbol for 900.
 Sampi is now also high level programming language.
@@ -21,8 +21,9 @@ Once the IDE opens, you can begin experimenting with Sampi.
 **Printing**
 
 To bring a value, type:
-
+```text
 say("Hello, world!")
+```
 
 **Variables**
 
