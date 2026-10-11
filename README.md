@@ -20,7 +20,7 @@ Once the IDE opens, you can begin experimenting with Sampi.
 
 ## **Printing**
 
-To bring a value, type:
+To display a value, type:
 ```text
 say("Hello, world!")
 ```
@@ -60,11 +60,12 @@ If you want to use Pemdas, use parentheses
 When adding strings and numbers, be careful because
 
 5 + 5 + "hello" = "10hello"
+
 5 + (5 + "hello") = "55hello"
 
 Sampi also has ways to compare values.
 
-| comparison | Example | Result |
+| Comparison | Example | Result |
 |---|---|---|
 | Equal | `1 = 1` | `true` |
 | Greater than | `2 > 1` | `true` |
@@ -75,7 +76,7 @@ Sampi also has ways to compare values.
 
 You can chain together comparisons with
 
-| comparison | Example | Result |
+| Operation | Example | Result |
 |---|---|---|
 | And | `true and false` | `false` |
 | Or | `true or false is` | `true` |
@@ -157,17 +158,15 @@ end
 say(add(1, 2))
 ```
 
-Will say 3.
-
 ## **Multisets**
 
 lists are made with square brackets.
 ```text
-set x to [1, 2, 3]
+set x to ["a", "b", "c"]
 say(x[1])
 ```
 
-Will give 1. Indexing starts a 1. 0 is the same as 1. ~1 give the last index.
+Indexing starts a 1. 0 is the same as 1. ~1 give the last index.
 
 Dictionary's are made with curly braces.
 
@@ -176,14 +175,36 @@ set x to {"a":1, "b":2}
 say(x["a"])
 ```
 
-Prints 1.
+to get the length of a list, use
+```text
+set x to [1, 2, 3]
+say(length(x)]
+```
+length() also works on dictionaries, strings, and numbers, too.
 
-There is not much support for dictionaries and lists yet.
-I am working on it.
+you can mess with lists and dictionaries.
+```text
+set x to ["a", "b", "c"]
+```
+
+| Method | Example | Result |
+|---|---|---|
+| add() | `x.add("d")` | `["a", "b", "c", "d"]` |
+| remove() | `x.remove("b")` | `["a", "c"]` |
+| delete | `x.delete(3)` | `["a","b"]` |
+| get_index() | `x.get_index("c")` | `3` |
+| insert() | `insert(1, "hello")` | `["a", "hello", "b", "c"]` |
+| clear() | `x.clear()` | `[]` |
+| join() | `x.join(", )` | `"a, b, c"` |
+
+```text
+set x to {"a":1, "b:2", "c":3}
+```
+
+| Method | Example | Result |
+|---|---|---|
+| add() | `x.add("d", 4)` | `{"a":1, "b:2", "c":3, "d":4}` |
+| remove() | `x.remove("b")` | `{"a":1, "c":3}` |
 
 I am moving to to a bytecode VM, 
 and then will move the VM to C, for performance reasons.
-
-
-
-
