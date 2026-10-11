@@ -135,7 +135,7 @@ Will give 1. Indexing starts a 1. 0 is the same as 1. ~1 give the last index.
 Dictionary look like
 
 set x to {1:2 3:4}
-say(x[1]
+say(x[1])
 
 Prints 2.
 
