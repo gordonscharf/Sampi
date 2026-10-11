@@ -4,11 +4,12 @@ Sampi is an obsolete Greek letter and symbol for 900.
 Sampi is now also high level programming language.
 The symbol for sampi is ϡ.
 
-Installing Sampi:
+**Installing Sampi**
+
 Download the Sampi using the green Code button on 
 GitHub and select Download ZIP. Extract the downloaded folder.
 
-Running Sampi
+**Running Sampi**
 To run Sampi, you will need Python3.
 Open a terminal in the project folder and run:
 
@@ -17,13 +18,13 @@ python3 IDE.py
 Or use run IDE.py in python.
 Once the IDE opens, you can begin experimenting with Sampi.
 
-Printing.
+**Printing**
 
 To bring a value, type:
 
 say("Hello, world!")
 
-Variables.
+**Variables**
 
 To set a variable, do:
 
@@ -33,7 +34,7 @@ And to increment it:
 
 set x to x + 1
 
-The operators are
+**Operators**
 
 Add 1 + 1 = 2
 Subtract 1 - 1 = 0
@@ -70,11 +71,13 @@ Not equal 1 != 1 is false
 
 You can chain together comparisons with
 
-And true and false is false
-Ore true or false is true
-Not not true is false
+And: true and false is false
+Or: true or false is true
+Not: not true is false
 
 Sampi uses true and false, not True and False.
+
+**If Statments**
 
 An if statement takes the from of
 
@@ -93,7 +96,7 @@ else condition:
     code
 end
 
-Loop look like
+**Loops**
 
 repeat 5:
 	say("hello")
@@ -116,7 +119,7 @@ end
 It stops when the condition is true.
 Be careful not to make an infinite loop.
 
-Functions look like:
+**Functions**
 
 func name arg1 arg2 arg3:
 	code
@@ -138,14 +141,16 @@ say(add(1, 2))
 
 Will say 3.
 
-There are lists
+**Multisets**
+
+lists are made with square brackets.
 
 set x to [1, 2, 3]
 say(x[1])
 
 Will give 1. Indexing starts a 1. 0 is the same as 1. ~1 give the last index.
 
-Dictionary look like
+Dictionary's are made with curly braces.
 
 set x to {1:2, 3:4}
 say(x[1])
