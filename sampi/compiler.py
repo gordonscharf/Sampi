@@ -40,10 +40,9 @@ class Compiler():
         return index
 
     def patch(self, index, target):
-        self.byte_code[index] = (
-            self.byte_code[index][0],
-            target
-        )
+        byte = list(self.byte_code[index])
+        byte[1] = target
+        self.byte_code[index] = tuple(byte)
 
     def compile_(self, ast):
         for node in ast:
@@ -90,16 +89,16 @@ class Compiler():
             self.patch(jump_index, target)
 
     def repeat(self, node):
-        var = f"!{self.loop}"
-        self.byte_code.append(("INIT_LOOP", var))
-        start = self.length
+        loop = self.loop
         self.mini_compile(node.num)
-        index = self.emit(("LOOP_NEXT", None, var))
+        self.byte_code.append(("INIT_LOOP", loop))
+        start = self.length
+        index = self.emit(("LOOP_NEXT", None, loop, node.var))
 
         self.loop += 1
         self.compile_(node.code)
         self.byte_code.append(("JUMP", start))
-        self.patch(index, target)
+        self.patch(index, self.length)
         self.loop -= 1
 
     def func(self, node):
