@@ -1,6 +1,6 @@
 # data types (not really AST)
 
-class Word(str):
+class String(str):
     def __new__(cls, value=""):
         obj = super().__new__(cls, value)
         obj.attributes = {
@@ -23,7 +23,7 @@ class Word(str):
         return  str.__str__(self)
     
     def __add__(self, o):
-        return Word(str.__add__(self, o))
+        return String(str.__add__(self, o))
     
 class Number(float):
     def __new__(cls, value=0):
@@ -60,6 +60,9 @@ class Number(float):
     
     def __index__(self):
         return int(self)
+    
+    def __len__(self):
+        return len(float.__repr__(self)) - 1 - self.is_integer()
 
 class Array(list):
     def __init__(self, items=()):
@@ -69,7 +72,7 @@ class Array(list):
             "remove": self.remove,
             "delete": self.delete,
             "get_index": self.index,
-            "insert": self.insert,
+            "insert": self._insert,
             "clear": self.clear,
             "join": self.join
             }
@@ -79,8 +82,13 @@ class Array(list):
             index -= 1
         del self[int(index)]
     
+    def _insert(self, index, value):
+        if index > 0:
+            index -= 1
+        self.insert(index, value)
+    
     def join(self, text=""):
-        return Word(f"{text}".join(self))
+        return String(f"{text}".join(self))
 
     def __add__(self, o):
         return Array(list.__add__(self, o))
@@ -98,7 +106,8 @@ class Dict(dict):
             "clear": self.clear,
             "add_error": self.add_error,
             "keys": lambda: Array(self.keys()),
-            "values": lambda: Array(self.values())
+            "values": lambda: Array(self.values()),
+            "remove": self.pop
             }
 
     def add(self, key, value):
