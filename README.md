@@ -15,7 +15,7 @@ Open a terminal in the project folder and run:
 
 python3 IDE.py
 
-Or use run IDE.py in python.
+Or run IDE.py in python.
 Once the IDE opens, you can begin experimenting with Sampi.
 
 ## **Printing**
@@ -31,6 +31,7 @@ To set a variable, do:
 ```text
 set x to 1
 ```
+
 And to increment it:
 ```text
 set x to x + 1
@@ -63,18 +64,22 @@ When adding strings and numbers, be careful because
 
 Sampi also has ways to compare values.
 
-Equal 1 = 1 is true (do not use 1 == 1)
-Greater than 1 > 1 is false
-Less than 1 < 1 is false
-Grater than or equal to 1 >= 1 is true
-Less than or equal to 1 <= 1 is true
-Not equal 1 != 1 is false
+| comparison | Example | Result |
+|---|---|---|
+| Equal | `1 = 1` | `true` |
+| Greater than | `2 > 1` | `true` |
+| Less than | `2 < 3` | `false` |
+| Grater than or equal to | `1 >= 1` | `true` |
+| Less than or equal to | `1 <= 2` | `false` |
+| Not equal | `1 != 2` | `true` |
 
 You can chain together comparisons with
 
-And: true and false is false
-Or: true or false is true
-Not: not true is false
+| comparison | Example | Result |
+|---|---|---|
+| And | `true and false` | `false` |
+| Or | `true or false is` | `true` |
+| Not | `not true` | `false` |
 
 Sampi uses true and false, not True and False.
 
