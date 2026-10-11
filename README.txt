@@ -143,7 +143,7 @@ There is not much support for dictionaries and lists yet.
 I am working on it.
 
 I think that is all of Sampi so far.
-I am moving to to a byrecode VM, 
+I am moving to to a bytecode VM, 
 and then will move the VM to C, for performance reasons.
 
 
