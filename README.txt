@@ -139,7 +139,8 @@ say(x[1]
 
 Prints 2.
 
-There is not much support for dictionaries and lists yet
+There is not much support for dictionaries and lists yet.
+I am working on it.
 
 I think that is all of Sampi so far.
 I am moving to to a byrecode VM, 
