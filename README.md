@@ -70,11 +70,11 @@ if condition:
 end
 
 
-There is also elif and else. if comes first. you can have as many elif as as you like. else comes last, if at all.
+There is also else. if comes first. else comes last, if at all.
 
 if condition:
     code
-elif condition:
+else if condition:
     code
 else condition:
     code
@@ -105,13 +105,13 @@ Be careful not to make an infinite loop.
 
 Functions look like:
 
-Func name arg1 arg2 arg3:
+func name arg1 arg2 arg3:
 	code
 end
 
 To call a function, do
 
-name(arg1 arg2 arg3)
+name(arg1, arg2, arg3)
 
 Use return to get a value, or ext the function.
 
@@ -121,20 +121,20 @@ func add a b:
     return a + b
 end
 
-say(add(1 2))
+say(add(1, 2))
 
 Will say 3.
 
 There are lists
 
-set x to [1 2 3]
+set x to [1, 2, 3]
 say(x[1])
 
 Will give 1. Indexing starts a 1. 0 is the same as 1. ~1 give the last index.
 
 Dictionary look like
 
-set x to {1:2 3:4}
+set x to {1:2, 3:4}
 say(x[1])
 
 Prints 2.
