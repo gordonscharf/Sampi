@@ -1,15 +1,15 @@
-**How to code in Sampi**
+# **How to code in Sampi**
 
 Sampi is an obsolete Greek letter and symbol for 900.
 Sampi is now also high level programming language.
 The symbol for sampi is ϡ.
 
-# **Installing Sampi**
+## **Installing Sampi**
 
 Download the Sampi using the green Code button on 
 GitHub and select Download ZIP. Extract the downloaded folder.
 
-**Running Sampi**
+## **Running Sampi**
 To run Sampi, you will need Python3.
 Open a terminal in the project folder and run:
 
@@ -18,24 +18,24 @@ python3 IDE.py
 Or use run IDE.py in python.
 Once the IDE opens, you can begin experimenting with Sampi.
 
-**Printing**
+## **Printing**
 
 To bring a value, type:
-```code
+```text
 say("Hello, world!")
 ```
 
-**Variables**
+## **Variables**
 
 To set a variable, do:
-
+```text
 set x to 1
-
+```
 And to increment it:
-
+```text
 set x to x + 1
-
-**Operators**
+```
+## **Operators**
 
 Add 1 + 1 = 2
 Subtract 1 - 1 = 0
@@ -78,90 +78,104 @@ Not: not true is false
 
 Sampi uses true and false, not True and False.
 
-**If Statments**
+## **If Statments**
 
 An if statement takes the from of
-
-if condition:
-    code
+```text
+set x to 1
+if x = 1:
+    say("x is equal to 1!")
 end
-
+```
 
 There is also else. if comes first. else comes last, if at all.
+```text
+set num to 1
 
-if condition:
-    code
-else if condition:
-    code
-else condition:
-    code
+if num > 0:
+    say("+")
+else if x = 0:
+    say("0")
+else:
+    say("-")
 end
+```
 
-**Loops**
-
+## **Loops**
+ ```text
 repeat 5:
 	say("hello")
 end
+```
 
 If you want the current iteration, do
-
+```text
 repeat 5 as I:
     say(i)
 end
+```
 
 It starts at 1
 
 There is also until loops
-
-until condition:
-    code
+```text
+set guess to ""
+until guess = "Password:
+    say("That ie not the password")
+	set guess to ask("What is the password? ")
 end
+```
 
 It stops when the condition is true.
 Be careful not to make an infinite loop.
 
-**Functions**
-
-func name arg1 arg2 arg3:
-	code
+## **Functions**
+```text
+func greet name:
+	say("Hello, " + name + "!")
 end
+```
 
 To call a function, do
+```text
+greet(1, 2)
+```
 
-name(arg1, arg2, arg3)
-
-Use return to get a value, or ext the function.
+Use return to get a value, or exit the function.
 
 For example:
-
+```text
 func add a b:
     return a + b
 end
 
 say(add(1, 2))
+```
 
 Will say 3.
 
-**Multisets**
+## **Multisets**
 
 lists are made with square brackets.
-
+```text
 set x to [1, 2, 3]
 say(x[1])
+```
 
 Will give 1. Indexing starts a 1. 0 is the same as 1. ~1 give the last index.
 
 Dictionary's are made with curly braces.
 
-set x to {1:2, 3:4}
-say(x[1])
+```text
+set x to {"a":1, "b":2}
+say(x["a"])
+```
 
-Prints 2.
+Prints 1.
 
 There is not much support for dictionaries and lists yet.
 I am working on it.
 
-I think that is all of Sampi so far.
 I am moving to to a bytecode VM, 
 and then will move the VM to C, for performance reasons.
 
