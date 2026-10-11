@@ -20,7 +20,7 @@ class Compiler():
             a.MethodCall: self.methodcall,
 
             a.Number: lambda node: ("CONST", node),
-            a.Word: lambda node: ("CONST", node),
+            a.String: lambda node: ("CONST", node),
             a.Array: self.array,
             a.Dict: self.Dict,
             a.Index: self.index,
@@ -90,13 +90,16 @@ class Compiler():
             self.patch(jump_index, target)
 
     def repeat(self, node):
-        var = node.var or f"!{self.loop}"
-        self.byte_code.append(("START_LOOP", var))
+        var = f"!{self.loop}"
+        self.byte_code.append(("INIT_LOOP", var))
         start = self.length
+        self.mini_compile(node.num)
+        index = self.emit(("LOOP_NEXT", None, var))
+
         self.loop += 1
         self.compile_(node.code)
-        self.mini_compile(node.num)
-        self.byte_code.append(("LOOP_NEXT", var, start))
+        self.byte_code.append(("JUMP", start))
+        self.patch(index, target)
         self.loop -= 1
 
     def func(self, node):
