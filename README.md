@@ -10,10 +10,11 @@ Download the Sampi using the green **Code** button on
 GitHub and select **Download ZIP**. Extract the downloaded folder.
 
 ## **Running Sampi**
-To run Sampi, you will need **Python3**.
+To run Sampi, you will need **Python3**, and nothing else.
 Open a terminal in the project folder and run:
-
+```bash
 python3 IDE.py
+```
 
 Or run IDE.py in python.
 Once the IDE opens, you can begin experimenting with Sampi.
@@ -54,7 +55,6 @@ Output
 ```text
 hello55
 ```
-
 
 Sampi does operations from left to right, and doesn't care about PEMDAS.
 ```text
