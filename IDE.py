@@ -92,7 +92,7 @@ def save_file_as(event=None):
     file_path = filedialog.asksaveasfilename(
         title="Save File",
         filetypes=[("Sampi file", "*.sampi"), ("Text file", "*.txt")],
-        defaultextension=".leptk",
+        defaultextension=".sampi",
         confirmoverwrite=True,
         initialfile=curr_file_name
     )
