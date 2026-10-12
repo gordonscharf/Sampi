@@ -1,7 +1,7 @@
 # **How to code in Sampi**
 
 Sampi is an obsolete Greek letter and symbol for 900.
-Sampi is now also high-level programming language.
+Sampi is also the name of a high-level programming language.
 The symbol for sampi is ϡ.
 
 ## **Installing Sampi**
@@ -175,7 +175,7 @@ Output
 ```
 It starts at 1
 
-There is also until loops
+Sampi also supports until loops.
 ```text
 set guess to ""
 until guess = "Password":
@@ -224,7 +224,7 @@ Output
 
 ## **Lists and Dictionaries**
 
-lists are made with square brackets.
+Lists are made with square brackets.
 ```text
 set x to ["a", "b", "c"]
 say(x[1])
@@ -236,7 +236,7 @@ a
 ```
 
 
-Indexing starts at 1. 0 is the same as 1. ~1 give the last index.
+Indexing starts at 1. 0 is the same as 1. ~1 gives the last index.
 
 Dictionaries are made with curly braces.
 
@@ -251,7 +251,7 @@ Output
 ```
 
 
-to get the length of a list, use
+To get the length of a list, use
 ```text
 set x to [1, 2, 3]
 say(length(x))
@@ -265,7 +265,7 @@ Output
 
 length() also works on dictionaries, strings, and numbers, too.
 
-you can mess with lists and dictionaries.
+You can mess with lists and dictionaries.
 ```text
 set x to ["a", "b", "c"]
 ```
@@ -289,3 +289,8 @@ set x to {"a": 1, "b": 2, "c": 3}
 | add() | `x.add("d", 4)` | `{"a": 1, "b": 2, "c": 3, "d": 4}` |
 | remove() | `x.remove("b")` | `{"a": 1, "c": 3}` |
 | clear() | `x.clear()` | `{}` |
+
+# **Nerd Section**
+
+Sami runs a custom virtual machine (VM) that executes "byte code".
+I am going hopefully to move the VM to C for performance reasons.
