@@ -12,10 +12,9 @@ GitHub and select **Download ZIP**. Extract the downloaded folder.
 ## **Running Sampi**
 To run Sampi, you will need **Python3**, and **nothing else**.
 Open a terminal in the project folder and run:
-```bash
+```text
 python3 IDE.py
 ```
-
 Or run IDE.py in python.
 Once the IDE opens, you can begin experimenting with Sampi.
 
@@ -25,14 +24,12 @@ To display a value, type:
 ```text
 say("Hello, world!")
 ```
-
 ## **Variables**
 
 To set a variable, do:
 ```text
 set x to 1
 ```
-
 And to increment it:
 ```text
 set x to x + 1
@@ -50,12 +47,10 @@ A string plus a number combines them
 ```text
 say("hello" + 5 + 5)
 ```
-
 Output
 ```text
 hello55
 ```
-
 Sampi does operations from left to right, and doesn't care about PEMDAS.
 ```text
 say(2 + 3 * 4)
@@ -65,29 +60,24 @@ Output
 ```text
 20
 ```
-
 If you want to use PEMDAS, use parentheses
 ```text
 say(2 + (3 * 4))
 ```
-
 Output
 ```text
 14
 ```
-
 When adding strings and numbers, be careful because
 ```text
 say(5 + 5 + "hello")
 say(5 + (5 + "hello"))
 ```
-
 Output
 ```text
 10hello
 55hello
 ```
-
 Sampi also has ways to compare values.
 
 | Comparison | Example | Result |
@@ -118,12 +108,10 @@ if x = 1:
     say("x is equal to 1!")
 end
 ```
-
 Output
 ```text
 x is equal to 1!
 ```
-
 There is also else. if comes first. else comes last, if at all.
 ```text
 set num to 1
@@ -136,19 +124,16 @@ else:
     say("-")
 end
 ```
-
 Output
 ```text
 +
 ```
-
 ## **Loops**
  ```text
 repeat 5:
 	say("hello")
 end
 ```
-
 Output
 ```text
 hello
@@ -157,14 +142,12 @@ hello
 hello
 hello
 ```
-
 If you want the current iteration, do
 ```text
 repeat 5 as i:
     say(i)
 end
 ```
-
 Output
 ```text
 1
@@ -197,18 +180,14 @@ func greet name:
 	say("Hello, " + name + "!")
 end
 ```
-
 To call a function, do
 ```text
 greet("World")
 ```
-
 Output
 ```text
 Hello, World!
 ```
-
-
 Use return to get a value, or exit the function.
 
 For example:
@@ -219,13 +198,10 @@ end
 
 say(add(1, 2))
 ```
-
 Output
 ```text
 3
 ```
-
-
 ## **Lists and Dictionaries**
 
 Lists are made with square brackets.
@@ -233,13 +209,10 @@ Lists are made with square brackets.
 set x to ["a", "b", "c"]
 say(x[1])
 ```
-
 Output
 ```text
 a
 ```
-
-
 Indexing starts at 1. 0 is the same as 1. ~1 gives the last index.
 
 Dictionaries are made with curly braces.
@@ -248,13 +221,10 @@ Dictionaries are made with curly braces.
 set x to {"a":1, "b":2}
 say(x["a"])
 ```
-
 Output
 ```text
 1
 ```
-
-
 To get the length of a list, use
 ```text
 set x to [1, 2, 3]
@@ -265,15 +235,12 @@ Output
 ```text
 3
 ```
-
-
 length() also works on dictionaries, strings, and numbers, too.
 
 You can mess with lists and dictionaries.
 ```text
 set x to ["a", "b", "c"]
 ```
-
 | Method | Example | Result |
 |---|---|---|
 | add() | `x.add("d")` | `["a", "b", "c", "d"]` |
@@ -283,11 +250,9 @@ set x to ["a", "b", "c"]
 | insert() | `insert(1, "hello")` | `["a", "hello", "b", "c"]` |
 | clear() | `x.clear()` | `[]` |
 | join() | `x.join(", ")` | `"a, b, c"` |
-
 ```text
 set x to {"a": 1, "b": 2, "c": 3}
 ```
-
 | Method | Example | Result |
 |---|---|---|
 | add() | `x.add("d", 4)` | `{"a": 1, "b": 2, "c": 3, "d": 4}` |
