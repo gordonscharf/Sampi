@@ -24,7 +24,7 @@ unary_ops = {"NOT", "NEG"}
 
 parens = ("LBRAK", "LCURL")
 
-binds_atom = {"NUMBER": a.Number, "STRING": a.Word, "IDENT": a.Var,}
+binds_atom = {"NUMBER": a.Number, "STRING": a.String, "IDENT": a.Var,}
 
 class Parser:
     def __init__(self, tokens):
@@ -174,7 +174,7 @@ class Parser:
             if type(ansr) is a.Var and self.current[0] == "LPAR":
                 ansr = a.Call(ansr.name, self.parse_multiset(self.current[0])._list())
 
-            if type(ansr) in {a.Var, a.Word, a.Call}: # class stuff
+            if type(ansr) in {a.Var, a.String, a.Call}: # class stuff
                 while self.current[0] == "DOT":
                     self.eat("DOT")
                     name = self.eat("IDENT")[1]
@@ -185,7 +185,7 @@ class Parser:
                     if self.current[0] == "LBRAK":
                         ansr = self.parse_index(ansr)
 
-            if type(ansr) in {a.Var, a.Word, a.Call, a.MethodCall} and self.current[0] == "LBRAK":
+            if type(ansr) in {a.Var, a.String, a.Call, a.MethodCall} and self.current[0] == "LBRAK":
                 return self.parse_index(ansr)
 
             return ansr

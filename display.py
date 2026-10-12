@@ -1,7 +1,9 @@
 import sampi
 
 code = """
-say(~1^0.5)
+repeat 5 as i:
+    say("hello")
+end
 """
 
 tokens = sampi.lex(code)
@@ -9,4 +11,4 @@ parser = sampi.Parser(tokens)
 ast = parser.parse()
 compiler = sampi.Compiler()
 byte_code = compiler.compile_(ast)
-x = sampi.run_vm(byte_code)
+vars_ = sampi.run_vm(byte_code)
