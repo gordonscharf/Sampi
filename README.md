@@ -2,7 +2,7 @@
 
 Sampi is an obsolete Greek letter and symbol for 900.
 Sampi is also the name of a high-level programming language.
-The symbol for sampi is ϡ.
+The symbol for Sampi is ϡ.
 
 ## **Installing Sampi**
 
@@ -168,7 +168,7 @@ end
 ```
 ### **warning**
 when using ask, you need to type into python IDE.
-You can only run Sampi scripts through the sampi IDE.
+You can only run Sampi scripts through the Sampi IDE.
 I am working on it. remember, Sampi is experimental.
 
 It stops when the condition is true.
