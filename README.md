@@ -6,8 +6,9 @@ The symbol for Sampi is ϡ.
 
 ## **Installing Sampi**
 
-Download the Sampi using the green **Code** button on 
+Download Sampi using the green **Code** button on 
 GitHub and select **Download ZIP**. Extract the downloaded folder.
+You now have the Sampi editor and source code
 
 ## **Running Sampi**
 To run Sampi, you will need **Python3**, and **nothing else**.
@@ -84,9 +85,9 @@ Sampi also has ways to compare values.
 |---|---|---|
 | Equal | `1 = 1` | `true` |
 | Greater than | `2 > 1` | `true` |
-| Less than | `2 < 3` | `false` |
+| Less than | `2 < 3` | `true` |
 | Greater than or equal to | `1 >= 1` | `true` |
-| Less than or equal to | `1 <= 2` | `false` |
+| Less than or equal to | `1 <= 2` | `true` |
 | Not equal | `1 != 2` | `true` |
 
 You can chain together comparisons with
@@ -162,7 +163,7 @@ Sampi also supports until loops.
 ```text
 set guess to ""
 until guess = "Password":
-    say("That ie not the password")
+    say("That is not the password")
 	set guess to ask("What is the password? ")
 end
 ```
@@ -261,5 +262,5 @@ set x to {"a": 1, "b": 2, "c": 3}
 
 # **Nerd Section**
 
-Sami runs a custom virtual machine (VM) that executes "byte code".
-I am going hopefully to move the VM to C for performance reasons.
+Sampi runs a custom virtual machine (VM) that executes "bytecode".
+I am hopefully going to move the VM to C for performance reasons.
