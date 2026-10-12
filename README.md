@@ -168,7 +168,7 @@ end
 ```
 ### **warning**
 when using ask, you need to type into python IDE.
-You can only run Sampi scripts through the sampi IDE
+You can only run Sampi scripts through the sampi IDE.
 I am working on it. remember, Sampi is experimental.
 
 It stops when the condition is true.
