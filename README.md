@@ -6,11 +6,11 @@ The symbol for sampi is ϡ.
 
 ## **Installing Sampi**
 
-Download the Sampi using the green Code button on 
-GitHub and select Download ZIP. Extract the downloaded folder.
+Download the Sampi using the green **Code** button on 
+GitHub and select **Download ZIP**. Extract the downloaded folder.
 
 ## **Running Sampi**
-To run Sampi, you will need Python3.
+To run Sampi, you will need **Python3**.
 Open a terminal in the project folder and run:
 
 python3 IDE.py
@@ -78,7 +78,7 @@ Output
 
 When adding strings and numbers, be careful because
 ```text
-say(5 + 5 + "hello"))
+say(5 + 5 + "hello")
 say(5 + (5 + "hello"))
 ```
 
@@ -222,7 +222,7 @@ Output
 ```
 
 
-## **Multisets**
+## **Lists and Dictionaries**
 
 lists are made with square brackets.
 ```text
@@ -286,8 +286,6 @@ set x to {"a": 1, "b": 2, "c": 3}
 
 | Method | Example | Result |
 |---|---|---|
-| add() | `x.add("d", 4)` | `{"a":1, "b:2", "c":3, "d":4}` |
-| remove() | `x.remove("b")` | `{"a":1, "c":3}` |
-
-I am moving to to a bytecode VM, 
-and then will move the VM to C, for performance reasons.
+| add() | `x.add("d", 4)` | `{"a": 1, "b": 2, "c": 3, "d": 4}` |
+| remove() | `x.remove("b")` | `{"a": 1, "c": 3}` |
+| clear() | `x.clear()` | `{}` |
