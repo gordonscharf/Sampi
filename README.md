@@ -1,7 +1,7 @@
 # **How to code in Sampi**
 
 Sampi is an obsolete Greek letter and symbol for 900.
-Sampi is now also high level programming language.
+Sampi is now also high-level programming language.
 The symbol for sampi is ϡ.
 
 ## **Installing Sampi**
@@ -46,22 +46,47 @@ set x to x + 1
 | Division | `8 / 2` | `4` |
 
 A string plus a number combines them
+```text
+say("hello" + 5 + 5)
+```
 
-"hello" + 5 + 5 = "hello55"
+Output
+```text
+hello55
+```
 
-Sampi does operations from left to right, and doesn't care about Pemdas
 
-2 + 3 * 4 = 20
+Sampi does operations from left to right, and doesn't care about PEMDAS.
+```text
+say(2 + 3 * 4)
+```
 
-If you want to use Pemdas, use parentheses
+Output
+```text
+20
+```
 
-2 + (3 * 4) = 14
+If you want to use PEMDAS, use parentheses
+```text
+say(2 + (3 * 4))
+```
+
+Output
+```text
+14
+```
 
 When adding strings and numbers, be careful because
+```text
+say(5 + 5 + "hello"))
+say(5 + (5 + "hello"))
+```
 
-5 + 5 + "hello" = "10hello"
-
-5 + (5 + "hello") = "55hello"
+Output
+```text
+10hello
+55hello
+```
 
 Sampi also has ways to compare values.
 
@@ -70,7 +95,7 @@ Sampi also has ways to compare values.
 | Equal | `1 = 1` | `true` |
 | Greater than | `2 > 1` | `true` |
 | Less than | `2 < 3` | `false` |
-| Grater than or equal to | `1 >= 1` | `true` |
+| Greater than or equal to | `1 >= 1` | `true` |
 | Less than or equal to | `1 <= 2` | `false` |
 | Not equal | `1 != 2` | `true` |
 
@@ -79,19 +104,24 @@ You can chain together comparisons with
 | Operation | Example | Result |
 |---|---|---|
 | And | `true and false` | `false` |
-| Or | `true or false is` | `true` |
+| Or | `true or false` | `true` |
 | Not | `not true` | `false` |
 
 Sampi uses true and false, not True and False.
 
-## **If Statments**
+## **If Statements**
 
-An if statement takes the from of
+An if statement takes the form of
 ```text
 set x to 1
 if x = 1:
     say("x is equal to 1!")
 end
+```
+
+Output
+```text
+x is equal to 1!
 ```
 
 There is also else. if comes first. else comes last, if at all.
@@ -100,11 +130,16 @@ set num to 1
 
 if num > 0:
     say("+")
-else if x = 0:
+else if num = 0:
     say("0")
 else:
     say("-")
 end
+```
+
+Output
+```text
++
 ```
 
 ## **Loops**
@@ -114,19 +149,36 @@ repeat 5:
 end
 ```
 
+Output
+```text
+hello
+hello
+hello
+hello
+hello
+```
+
 If you want the current iteration, do
 ```text
-repeat 5 as I:
+repeat 5 as i:
     say(i)
 end
 ```
 
+Output
+```text
+1
+2
+3
+4
+5
+```
 It starts at 1
 
 There is also until loops
 ```text
 set guess to ""
-until guess = "Password:
+until guess = "Password":
     say("That ie not the password")
 	set guess to ask("What is the password? ")
 end
@@ -144,8 +196,14 @@ end
 
 To call a function, do
 ```text
-greet(1, 2)
+greet("World")
 ```
+
+Output
+```text
+Hello, World!
+```
+
 
 Use return to get a value, or exit the function.
 
@@ -158,6 +216,12 @@ end
 say(add(1, 2))
 ```
 
+Output
+```text
+3
+```
+
+
 ## **Multisets**
 
 lists are made with square brackets.
@@ -166,20 +230,39 @@ set x to ["a", "b", "c"]
 say(x[1])
 ```
 
-Indexing starts a 1. 0 is the same as 1. ~1 give the last index.
+Output
+```text
+a
+```
 
-Dictionary's are made with curly braces.
+
+Indexing starts at 1. 0 is the same as 1. ~1 give the last index.
+
+Dictionaries are made with curly braces.
 
 ```text
 set x to {"a":1, "b":2}
 say(x["a"])
 ```
 
+Output
+```text
+1
+```
+
+
 to get the length of a list, use
 ```text
 set x to [1, 2, 3]
-say(length(x)]
+say(length(x))
 ```
+
+Output
+```text
+3
+```
+
+
 length() also works on dictionaries, strings, and numbers, too.
 
 you can mess with lists and dictionaries.
@@ -195,10 +278,10 @@ set x to ["a", "b", "c"]
 | get_index() | `x.get_index("c")` | `3` |
 | insert() | `insert(1, "hello")` | `["a", "hello", "b", "c"]` |
 | clear() | `x.clear()` | `[]` |
-| join() | `x.join(", )` | `"a, b, c"` |
+| join() | `x.join(", ")` | `"a, b, c"` |
 
 ```text
-set x to {"a":1, "b:2", "c":3}
+set x to {"a": 1, "b": 2, "c": 3}
 ```
 
 | Method | Example | Result |
