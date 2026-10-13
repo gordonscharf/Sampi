@@ -48,6 +48,7 @@ jobs:
           --onefile
           --name Sampi
           --icon logo.icns
+          --add-data "IDE data:IDE data"
           --target-arch ${{ matrix.arch }}
           IDE.py
 
@@ -60,6 +61,7 @@ jobs:
           --onefile
           --name Sampi
           --icon logo.ico
+          --add-data "IDE data;IDE data"
           IDE.py
 
       - name: Upload build
