@@ -222,7 +222,7 @@ class TextRedirector:
 root = tk.Tk()
 root.geometry("900x600")
 root.title("Sampi IDE")
-icon = tk.PhotoImage(file="IDE data/sampi logo.png")
+icon = tk.PhotoImage(file=resource_path("IDE data/sampi logo.png"))
 root.iconphoto(False, icon)
 
 root.rowconfigure(0, weight=1)
