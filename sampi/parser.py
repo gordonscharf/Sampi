@@ -230,8 +230,6 @@ class Parser:
                     node = self.parse_line()
                     if node is not None:
                         ast.append(node)
-                    else:
-                        self.pos += 1
                 return ast
             except IndexError:
                 raise SyntaxError(f"missing {end} for {type_}") from None
@@ -242,8 +240,7 @@ class Parser:
                     node = self.parse_line()
                     if node is not None:
                         ast.append(node)
-                    else:
-                        self.pos += 1
+
                 self.eat(end)
                 return ast
             except IndexError:

@@ -88,13 +88,19 @@ class Array(list):
         self.insert(index, value)
     
     def join(self, text=""):
-        return String(f"{text}".join(self))
-
+        try:
+            return String(f"{text}".join(self))
+        except TypeError:
+            raise TypeError("Can only join an array of strings")
+            
     def __add__(self, o):
         return Array(list.__add__(self, o))
 
     def _list(self):
         return self
+    
+    def __hash__(self):
+        return hash(tuple(self))
 
 class Dict(dict):
     def __init__(self, items=()):

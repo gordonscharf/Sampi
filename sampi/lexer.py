@@ -86,3 +86,21 @@ def lex(code):
 
     tokens.append(("EOF", ""))
     return tokens
+
+def lex_highlight(code):
+    tokens = []
+    for match in re.finditer(token_regex, code):
+        kind = match.lastgroup
+        value = match.group()
+
+        if kind in ("SPACE", "NEWLINE"):
+            continue
+
+        elif kind == "IDENT" and value in KEYWORDS:
+            tokens.append((KEYWORDS[value], value))
+
+        else:
+            tokens.append((kind, value))
+
+    tokens.append(("EOF", ""))
+    return tokens

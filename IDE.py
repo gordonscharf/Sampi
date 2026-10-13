@@ -8,6 +8,16 @@ from tkinter import filedialog, ttk
 
 import sampi
 
+from pathlib import Path
+
+def resource_path(relative_path):
+    if getattr(sys, "frozen", False) and hasattr(sys, "_MEIPASS"):
+        base_path = Path(sys._MEIPASS)
+    else:
+        base_path = Path(__file__).resolve().parent
+
+    return base_path / relative_path
+
 KEYWORDS = {
     "set",
     "if",
@@ -53,7 +63,7 @@ ui_modifier = "Command-" if is_mac else "Ctrl+"
 bind_modifier = "Command" if is_mac else "Control"
 
 def set_theme(theme):
-    with open("IDE data/themes.json", "r", encoding="utf-8") as file:
+    with open(resource_path("IDE data/themes.json"), "r", encoding="utf-8") as file:
         text = json.load(file)
 
     text_colors = text[f"{theme}_TEXT"]
@@ -140,7 +150,7 @@ def highlight_code():
         text_box.tag_remove(tag, "1.0", "end")
 
     code = text_box.get("1.0", tk.END)
-    tokens = sampi.lex(code)
+    tokens = sampi.lex_highlight(code)
 
     position = "1.0"
 
@@ -158,6 +168,8 @@ def highlight_code():
             text_box.tag_add("PREMADE", start, end)
         elif type_ in DATA_TYPES:
             text_box.tag_add(type_, start, end)
+        elif type_ == "UNKNOWN":
+            text_box.tag_add("ERROR", start, end)
         else:
             text_box.tag_add("OTHER", start, end)
 
@@ -245,6 +257,7 @@ text_box.bind("<<Modified>>", text_changed)
 output_box = tk.Text(pane, state="disabled", font=("Menlo", 14))
 pane.add(output_box, stretch="always")
 output_box.tag_configure("ERROR", foreground="#FF0000")
+text_box.tag_configure("ERROR", foreground="#FF0000")
 
 redirector = TextRedirector(output_box)
 sys.stdout = redirector
