@@ -1,4 +1,4 @@
-name: Build applications
+name: Build Sampi
 
 on:
   push:
@@ -15,18 +15,17 @@ jobs:
         include:
           - name: macOS-Intel
             runner: macos-15-intel
-            artifact: myapp-macos-intel
+            artifact: Sampi-macos-intel
             arch: x86_64
 
           - name: macOS-Apple-Silicon
             runner: macos-latest
-            artifact: myapp-macos-arm64
+            artifact: Sampi-macos-arm64
             arch: arm64
 
           - name: Windows-x64
             runner: windows-latest
-            artifact: myapp-windows-x64
-            arch: windows
+            artifact: Sampi-windows-x64
 
     steps:
       - name: Check out code
@@ -37,25 +36,35 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install build tool
+      - name: Install PyInstaller
         run: python -m pip install pyinstaller
 
       - name: Build macOS executable
         if: runner.os == 'macOS'
         run: >
           python -m PyInstaller
-          --clean --noconfirm --onefile
-          --name myapp
+          --clean
+          --noconfirm
+          --onefile
+          --name Sampi
+          --icon logo.icns
           --target-arch ${{ matrix.arch }}
-          main.py
+          IDE.py
 
       - name: Build Windows executable
         if: runner.os == 'Windows'
-        run: python -m PyInstaller --clean --noconfirm --onefile --name myapp main.py
+        run: >
+          python -m PyInstaller
+          --clean
+          --noconfirm
+          --onefile
+          --name Sampi
+          --icon logo.ico
+          IDE.py
 
       - name: Upload build
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact }}
-          path: dist/myapp*
+          path: dist/IDE*
           if-no-files-found: error
