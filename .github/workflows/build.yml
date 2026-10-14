@@ -39,13 +39,14 @@ jobs:
       - name: Install PyInstaller
         run: python -m pip install pyinstaller
 
-      - name: Build macOS executable
+      - name: Build macOS application
         if: runner.os == 'macOS'
         run: >
           python -m PyInstaller
           --clean
           --noconfirm
-          --onefile
+          --onedir
+          --windowed
           --name Sampi
           --icon logo.icns
           --add-data "IDE data:IDE data"
