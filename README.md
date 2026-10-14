@@ -16,7 +16,7 @@ Open a terminal in the project folder and run:
 ```text
 python3 IDE.py
 ```
-Or run IDE.py in python.
+Or run IDE.py in Python.
 Once the IDE opens, you can begin experimenting with Sampi.
 
 ## **Printing**
@@ -24,6 +24,10 @@ Once the IDE opens, you can begin experimenting with Sampi.
 To display a value, type:
 ```text
 say("Hello, world!")
+```
+Output:
+```text
+Hello, World
 ```
 ## **Variables**
 
@@ -44,37 +48,36 @@ set x to x + 1
 | Multiplication | `2 * 4` | `8` |
 | Division | `8 / 2` | `4` |
 
-A string plus a number combines them
+A string plus a number combines them:
 ```text
 say("hello" + 5 + 5)
 ```
-Output
+Output:
 ```text
 hello55
 ```
-Sampi does operations from left to right, and doesn't care about PEMDAS.
+Sampi does operations from left to right, and doesn't care about PEMDAS:
 ```text
 say(2 + 3 * 4)
 ```
-
-Output
+Output:
 ```text
 20
 ```
-If you want to use PEMDAS, use parentheses
+If you want to use PEMDAS, use parentheses:
 ```text
 say(2 + (3 * 4))
 ```
-Output
+Output:
 ```text
 14
 ```
-When adding strings and numbers, be careful because
+When adding strings and numbers, be careful because:
 ```text
 say(5 + 5 + "hello")
 say(5 + (5 + "hello"))
 ```
-Output
+Output:
 ```text
 10hello
 55hello
@@ -90,7 +93,7 @@ Sampi also has ways to compare values.
 | Less than or equal to | `1 <= 2` | `true` |
 | Not equal | `1 != 2` | `true` |
 
-You can chain together comparisons with
+You can chain together comparisons with:
 
 | Operation | Example | Result |
 |---|---|---|
@@ -102,14 +105,14 @@ Sampi uses true and false, not True and False.
 
 ## **If Statements**
 
-An if statement takes the form of
+An if statement takes the form of:
 ```text
 set x to 1
 if x = 1:
     say("x is equal to 1!")
 end
 ```
-Output
+Output:
 ```text
 x is equal to 1!
 ```
@@ -125,7 +128,7 @@ else:
     say("-")
 end
 ```
-Output
+Output:
 ```text
 +
 ```
@@ -135,7 +138,7 @@ repeat 5:
 	say("hello")
 end
 ```
-Output
+Output:
 ```text
 hello
 hello
@@ -143,13 +146,13 @@ hello
 hello
 hello
 ```
-If you want the current iteration, do
+If you want the current iteration, do:
 ```text
 repeat 5 as i:
     say(i)
 end
 ```
-Output
+Output:
 ```text
 1
 2
@@ -159,7 +162,7 @@ Output
 ```
 It starts at 1
 
-Sampi also supports until loops.
+Sampi also supports until loops:
 ```text
 set guess to ""
 until guess = "Password":
@@ -170,7 +173,7 @@ end
 ### **warning**
 when using ask, you need to type into python IDE.
 You can only run Sampi scripts through the Sampi IDE.
-I am working on it. remember, Sampi is experimental.
+I am working on it. Remember, Sampi is experimental.
 
 It stops when the condition is true.
 Be careful not to make an infinite loop.
@@ -181,11 +184,11 @@ func greet name:
 	say("Hello, " + name + "!")
 end
 ```
-To call a function, do
+To call a function, do:
 ```text
 greet("World")
 ```
-Output
+Output:
 ```text
 Hello, World!
 ```
@@ -199,25 +202,24 @@ end
 
 say(add(1, 2))
 ```
-Output
+Output:
 ```text
 3
 ```
 ## **Lists and Dictionaries**
 
-Lists are made with square brackets.
+Lists are made with square brackets:
 ```text
 set x to ["a", "b", "c"]
 say(x[1])
 ```
-Output
+Output:
 ```text
 a
 ```
 Indexing starts at 1. 0 is the same as 1. ~1 gives the last index.
 
-Dictionaries are made with curly braces.
-
+Dictionaries are made with curly braces:
 ```text
 set x to {"a":1, "b":2}
 say(x["a"])
@@ -226,19 +228,18 @@ Output
 ```text
 1
 ```
-To get the length of a list, use
+To get the length of a list, use:
 ```text
 set x to [1, 2, 3]
 say(length(x))
 ```
-
-Output
+Output:
 ```text
 3
 ```
 length() also works on dictionaries, strings, and numbers, too.
 
-You can mess with lists and dictionaries.
+You can mess with lists and dictionaries:
 ```text
 set x to ["a", "b", "c"]
 ```
@@ -262,5 +263,5 @@ set x to {"a": 1, "b": 2, "c": 3}
 
 # **Nerd Section**
 
-Sampi runs a custom virtual machine (VM) that executes "bytecode".
+Sampi runs a VM that executes "bytecode".
 I am hopefully going to move the VM to C for performance reasons.
