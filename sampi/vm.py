@@ -31,12 +31,6 @@ def in_(item, iter_):
 def sgn(x):
     return (x > 0) - (x < 0)
 
-def num(value):
-    float_ = float(value)
-    if float_.is_integer():
-        return int(float_)
-    return float_
-
 STANDARED_LIBRARY = {"math", "lines"}
 
 PATH = __file__.rsplit("/", 1)[0] + "/"
@@ -191,19 +185,24 @@ def run_vm(byte_code, starting_vars=None, starting_glues=None, type_="START"):
                 case "INIT_LOOP":
                     loop = byte[1]
                     vars_[f"!{loop}"] = 0
-                    vars_[f"${loop}"] = stack.pop()
-                # TODO fix loops
+                    multiset = stack.pop()
+                    if type(multiset) is Number:
+                        vars_[f"${loop}"] = range(multiset + 1)
+                    else:
+                        vars_[f"${loop}"] = multiset
+
                 case "LOOP_NEXT":
                     loop = byte[2]
                     loop_var = f"!{loop}"
-                    
+                    multiset = vars_[f"${loop}"]
                     current_loop = vars_[loop_var]
-                    if current_loop < vars_[f"${loop}"]:
+    
+                    if current_loop < len(multiset) - (type(multiset) is range):
                         next_loop = current_loop + 1
                         vars_[loop_var] = next_loop
                     
-                        if var := byte[3]:
-                            vars_[var] = next_loop
+                        if (var := byte[3]):
+                            vars_[var] = multiset[next_loop]
                     else:
                         ip = byte[1]
                         continue
@@ -226,9 +225,6 @@ def run_vm(byte_code, starting_vars=None, starting_glues=None, type_="START"):
                 case "INDEX":
                     index = stack.pop()
                     var = stack.pop()
-                    is_not_dict = type(var) is not Dict
-                    if  is_not_dict and index > 0:
-                        index -= 1
                     stack.append(var[index])
                 
                 case "IMPORT":

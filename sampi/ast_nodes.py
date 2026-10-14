@@ -25,6 +25,11 @@ class String(str):
     def __add__(self, o):
         return String(str.__add__(self, o))
     
+    def __getitem__(self, i):
+        if i > 0:
+            return str.__getitem__(self, i - 1)
+        return str.__getitem__(self, i)
+    
 class Number(float):
     def __new__(cls, value=0):
         obj = super().__new__(cls, value)
@@ -101,7 +106,12 @@ class Array(list):
     
     def __hash__(self):
         return hash(tuple(self))
-
+    
+    def __getitem__(self, i):
+        if i > 0:
+            return list.__getitem__(self, i - 1)
+        return list.__getitem__(self, i)
+    
 class Dict(dict):
     def __init__(self, items=()):
         super().__init__(items)
