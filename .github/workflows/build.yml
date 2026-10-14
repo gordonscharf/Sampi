@@ -45,7 +45,7 @@ jobs:
           python -m PyInstaller
           --clean
           --noconfirm
-          --onedir
+          --onefile
           --windowed
           --name Sampi
           --icon logo.icns
