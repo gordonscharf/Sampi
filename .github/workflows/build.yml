@@ -41,6 +41,8 @@ jobs:
 
       - name: Build macOS application
         if: runner.os == 'macOS'
+        run: |
+          du -ah dist/Sampi | sort -h | tail -30
         run: >
           python -m PyInstaller
           --clean
